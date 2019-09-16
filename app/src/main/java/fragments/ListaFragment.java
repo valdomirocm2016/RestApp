@@ -4,23 +4,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.aplicacaows.R;
-
+import com.example.restapp.R;
 import java.util.ArrayList;
 import java.util.List;
-
 import entities.CustomListAdapter;
 import entities.User;
 import retrofit2.Call;
@@ -31,13 +24,13 @@ import services.RetrofitService;
 
 public class ListaFragment extends Fragment {
 
-    /*private TextView campo;*/
-	private List<User> lista;
+
+
 	private ProgressDialog pDialog;
 	private Activity activity;
     private ArrayList<User> users=new ArrayList<User>();
     private ListView listView;
-    private String usuario;
+
 
     public ListaFragment() {
         // Required empty public constructor
@@ -49,7 +42,7 @@ public class ListaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view= inflater.inflate(R.layout.fragment_lista, container, false);
-        //campo =(TextView) view.findViewById(R.id.campo);
+
         activity = getActivity();
         listView = (ListView) view.findViewById(R.id.listaprincipal);
 		
