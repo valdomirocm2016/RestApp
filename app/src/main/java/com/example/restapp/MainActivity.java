@@ -32,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        post=(ImageButton) findViewById(R.id.post);
         buscar=(ImageButton) findViewById(R.id.btn_buscar);
         sair=(ImageButton) findViewById(R.id.sair);
 
-
-
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navegar(view);
+            }
+        });
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { get();
@@ -65,5 +70,8 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("Exceção :"+e.toString());
             e.printStackTrace();
         }
+    }
+    public void navegar(View view) {
+        startActivity(new Intent(this, PostActivity.class));
     }
 }
